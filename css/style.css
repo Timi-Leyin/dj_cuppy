@@ -254,7 +254,7 @@ visibility: visible;
 }
 
 .profile .profile__options .btn {
-  font-family: inherit;
+  /* font-family: inherit; */
 }
 
 .profile .profile__options .btn.active {
