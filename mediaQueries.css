@@ -12,6 +12,13 @@
     margin: 0;
 }
 }
+@media screen and (max-width: 410px) {
+    .header .profile_name{
+        font-size: 14px;
+        /* white-space: nowrap; */
+    }
+    
+}
 
 @media screen and (max-width: 835px) {
     /* grid-wrapper */

@@ -7,10 +7,10 @@
 /* varables */
 
 :root {
-    --background: #000;
+    --background: #111;
     --color: #fff;
     --color-dim: rgba(255, 255, 255, 0.171);
-    --primary-color: red;
+    --primary-color: #0095f6;
     --font-small: 14px;
     --font-medium: 18px;
     --font-big: 3rem;
@@ -18,9 +18,9 @@
 /* scrollbar */
 ::-webkit-scrollbar {
     appearance: none;
-    --size:7px;
+    --size: 7px;
     height: var(--size);
-   width: var(--size);
+    width: var(--size);
     border-radius: var(--font-big);
     background-color: transparent;
 }
@@ -93,42 +93,42 @@ body {
     justify-content: space-evenly;
 }
 
-
 /* grid-wrapper */
-.grid-wrapper{
+.grid-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
 
-
 /* header nav */
-.header{
+.header {
     position: sticky;
     top: 0;
     left: 0;
-    background: #000;
+    background: var(--background);
     width: 100%;
-height: 77px;
-z-index: 99;
-box-shadow: 0 0 10px rgba(42, 42, 42, 0.137);
-/* background-color: gray; */
-/* margin:0 0 10px 0; */
+    height: 77px;
+    z-index: 99;
+    box-shadow: 0 0 10px rgba(42, 42, 42, 0.137);
 }
 
-.header__nav .nav-icons {
-    list-style: none;
-    margin: 0 20px;
-    width: 300px;
+.header .header__left,
+.header .header__right {
+    margin: 30px;
 }
-.header__nav .icon-link {
-    text-decoration: none;
-    color: var(--color);
-    font-size: var(--font-medium);
-    transform: scale(1);
-    transition: 0.3s;
+/* profile name @ the header */
+.header .profile_name{
+    font-size: 18px;
 }
-.header__nav .icon-link:hover {
-    transform: scale(1.2);
+
+.header .--icon {
+    padding: 0 20px;
+    font-size: 28px;
+    cursor: pointer;
+}
+.header .--icon-s {
+    font-size: 25px;
+    cursor: pointer;
+    padding: 0 10px;
 }
 
 /* profile */
@@ -179,6 +179,13 @@ box-shadow: 0 0 10px rgba(42, 42, 42, 0.137);
 .profile .bio {
     padding: 15px 0;
 }
+.profile .bio a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.profile .followed-by {
+    font-size: 13px;
+}
 .profile .profile__options .btn {
     padding: 12px;
     border: none;
@@ -190,13 +197,17 @@ box-shadow: 0 0 10px rgba(42, 42, 42, 0.137);
     color: var(--color);
 }
 
+.profile .profile__options .btn.active {
+    background: var(--primary-color);
+}
+
 /* tags */
 
 .tags {
     position: relative;
     user-select: none;
     padding: 10px 0 30px;
-    margin:0px 0 30px;
+    margin: 0px 0 30px;
     /* width: 500px; */
     display: grid;
     /* background-image: linear-gradient(rgba(255, 255, 255, 0.068),transparent,rgba(29, 29, 29, 0.068)); */
@@ -249,16 +260,15 @@ box-shadow: 0 0 10px rgba(42, 42, 42, 0.137);
     width: 80%;
     margin: auto;
 }
-.posts .posts__nav span{
-padding: 0 10px;
-display: inline-block;
-font-size: 12px;
+.posts .posts__nav span {
+    padding: 0 10px;
+    display: inline-block;
+    font-size: 12px;
 }
-.posts .posts__nav li{
-display: inline-block;
-word-wrap: unset;
+.posts .posts__nav li {
+    display: inline-block;
+    word-wrap: unset;
 }
-
 
 .posts .posts__nav a {
     text-decoration: none;
@@ -275,13 +285,13 @@ word-wrap: unset;
 
 .posts .posts__nav a:not(.active) {
     color: var(--color);
-    opacity: .6;
+    opacity: 0.6;
 }
 .posts .posts__nav a:not(.active):hover {
     opacity: 1;
 }
 
-.posts .posts__posts{
+.posts .posts__posts {
     display: grid;
     grid-gap: 10px 7px;
     grid-template-columns: repeat(auto-fit, 250px);
@@ -289,7 +299,52 @@ word-wrap: unset;
     margin: 30px 0;
 }
 
-.posts .posts__posts .post{
-    height:250px;
+.posts .posts__posts .post {
+    height: 250px;
     background-color: var(--color-dim);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.posts .posts__posts .post:hover {
+    transform: scale(0.9);
+}
+
+/* bottom nav */
+.bottom-bar {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    --background: rgba(17, 17, 17, 0.856);
+    background-color: var(--background);
+    padding: 15px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.bottom-bar > .bottom-icons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    list-style: none;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.bottom-bar > .bottom-icons a {
+    text-decoration: none;
+    font-size: 22px;
+    color: var(--color);
+}
+.bottom-bar li {
+    padding: 0 20px;
+}
+
+.bottom-bar > .bottom-icons .fa {
+    padding-bottom: 10px;
 }
