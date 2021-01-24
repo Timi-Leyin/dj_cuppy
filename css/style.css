@@ -169,7 +169,7 @@ visibility: visible;
 
 .header .header__left,
 .header .header__right {
-    margin: 30px;
+    margin: 10px;
 }
 /* profile name @ the header */
 .header .profile_name {
@@ -178,11 +178,11 @@ visibility: visible;
 
 .header .--icon {
     padding: 0 20px;
-    font-size: 28px;
+    font-size: 20px;
     cursor: pointer;
 }
 .header .--icon-s {
-    font-size: 25px;
+    font-size: 20px;
     cursor: pointer;
     padding: 0 10px;
 }
@@ -190,7 +190,7 @@ visibility: visible;
 /* profile */
 .profile {
     position: relative;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     padding: 15px;
     width: 350px;
 }
@@ -275,7 +275,7 @@ visibility: visible;
     grid-template-columns: repeat(10, 100px);
     grid-column-gap: 10px;
     overflow: hidden;
-    overflow-x: auto;
+    /* overflow-x: auto; */
 }
 
 .tag img {
@@ -376,6 +376,13 @@ visibility: visible;
 }
 
 /* bottom nav */
+.--user{
+    height: 30px;
+   width: 30px;
+    border-radius: 100px;
+    background-color: #fff;
+    display: block;
+}
 .bottom-bar {
     position: sticky;
     bottom: 0;
@@ -422,4 +429,59 @@ border-radius: 100px;
 
 .bottom-bar > .bottom-icons .fa {
     padding-bottom: 10px;
+}
+
+.popup{
+    position: relative;
+    transition: 0.3s;
+    position: fixed;
+    left: 50%;
+    width: 100%;
+    z-index:  99999991;
+    transform: translateX(-50%) translateY(100%);
+    bottom:0;
+    background-color: #222;
+    padding: 10px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    transition: 0.4s;
+}
+.pop-up-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.609);
+    z-index: 9999999;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3;
+}
+.pop-up-bg.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup.active{
+    transform: translateX(-50%) translateY(0%);
+
+}
+.pop-up-actions .close{
+position: absolute;
+top: 10px;
+transform: translateX(-50%);
+padding: 4px;
+border-radius: 30px;
+cursor: pointer;
+width: 50px;
+background: #555;
+left: 50%;
+}
+.pop-up-actions li{
+padding: 16px 20px;
+user-select: none;
+cursor: pointer;
 }
