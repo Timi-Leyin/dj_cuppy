@@ -233,6 +233,7 @@ visibility: visible;
 }
 
 .profile .bio {
+width:300px;
     padding: 15px 0;
 }
 .profile .bio a {
